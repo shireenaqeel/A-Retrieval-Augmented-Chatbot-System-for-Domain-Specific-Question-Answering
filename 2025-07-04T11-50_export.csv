@@ -1,0 +1,31 @@
+﻿,Chunk,Text,L2 Distance,Cosine Similarity
+0,Chunk 1,"A large language model (LLM) is a language model trained with self-supervised machine learning on a vast amount of text, designed for natural language processing tasks, especially language generation.
+ The largest and most capable LLMs are generative pretrained transformers (GPTs), which are largely used in generative chatbots such as ChatGPT, Gemini or Claude. LLMs can be fine-tuned for specific tasks or guided by prompt engineering.[1] These models acquire predictive power regarding syntax, se",0.7477867007255554,0.6261067390441895
+1,Chunk 2,"ut predictably acquired according to a smooth scaling law. The authors considered a toy statistical model of an LLM solving multiple-choice questions, and showed that this statistical model, modified to account for other types of tasks, applies to these tasks as well.[116]
+ Let 
+
+
+
+x
+
+
+{\displaystyle x}
+
+ be the number of parameter count, and 
+
+
+
+y
+
+
+{\displaystyle y}
+
+ be the performance of the model.
+ Large language models are typically regarded as black boxes, and it is not clear how they can",0.8261014223098755,0.5869492888450623
+2,Chunk 3,"3]
+ An LLM is a type of foundation model (large X model) trained on language.[34] LLMs can be trained in different ways. In particular, GPT models are first pretrained to predict the next word on a large amount of data, before being fine-tuned.[35]
+ The qualifier ""large"" in ""large language model"" is inherently vague, as there is no definitive threshold for the number of parameters required to qualify as ""large"". As time goes on, what was previously considered ""large"" may evolve. GPT-1 of 2018 is",0.8430221080780029,0.5784889459609985
+3,Chunk 4," usually considered the first LLM, even though it has only 117 million parameters. The tendency towards larger models is visible in the list of large language models.
+ As technology advanced, large sums have been invested in increasingly large models. For example, training of the GPT-2 (i.e. a 1.5-billion-parameters model) in 2019 cost $50,000, while training of the PaLM (i.e. a 540-billion-parameters model) in 2022 cost $8 million, and Megatron-Turing NLG 530B (in 2021) cost around $11 million.",0.9053213596343994,0.5473393797874451
+4,Chunk 5,"mantics, and ontologies[2] inherent in human language corpora, but they also inherit inaccuracies and biases present in the data they are trained in.[3]
+ Before the emergence of transformer-based models in 2017, some language models were considered large relative to the computational and data constraints of their time. In the early 1990s, IBM's statistical models pioneered word alignment techniques for machine translation, laying the groundwork for corpus-based language modeling. A smoothed n-gr",0.9678645730018616,0.5160678625106812
