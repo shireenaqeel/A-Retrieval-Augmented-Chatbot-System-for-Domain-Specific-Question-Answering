@@ -56,3 +56,7 @@ pydantic
 
 # Optional / Helpful tools
 PyYAML
+
+# Fix for Detoxify not found
+detoxify
+pytorch-lightning
