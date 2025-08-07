@@ -22,7 +22,6 @@ lxml
 bibtexparser==1.4.3
 bleach==6.2.0
 blinker==1.8.2
-bs4==0.0.2
 cachetools==5.5.2
 catboost==1.2.7
 certifi==2025.6.15
