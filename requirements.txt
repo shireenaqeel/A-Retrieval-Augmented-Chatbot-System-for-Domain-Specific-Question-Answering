@@ -1,38 +1,58 @@
+# Core Web App
 streamlit
-beautifulsoup4
-lxml
-requests
-sentence-transformers
+fastapi
+uvicorn
+aiohttp
+httpx
+python-dotenv
+
+# NLP & Transformers
 transformers
+sentence-transformers
 torch
+detoxify
 langchain
-langchain-community
 langchain-core
+langchain-community
 langchain-groq
 langsmith
 langchain-text-splitters
-faiss-cpu
-pandas
-scikit-learn
-numpy
-matplotlib
-seaborn
-altair
-plotly
-PyMuPDF
-pdfplumber
-pytesseract
-SpeechRecognition
-pydub
-gTTS
-pyttsx3
+
+# Text + Doc Processing
 PyPDF2
+pdfplumber
+PyMuPDF
 python-docx
 python-pptx
-aiohttp
-uvicorn
-fastapi
-httpx
+pytesseract
+SpeechRecognition
+gTTS
+pyttsx3
+pydub
+
+# Web Scraping & Parsing
+beautifulsoup4
+lxml
+requests
+fake-useragent
+
+# Vector DB & Search
+faiss-cpu
+
+# Data Science & Utils
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
 tqdm
+
+# Plotting
+plotly
+altair
+
+# Validation / Pydantic
 pydantic
-python-dotenv
+
+# Optional / Helpful tools
+PyYAML
