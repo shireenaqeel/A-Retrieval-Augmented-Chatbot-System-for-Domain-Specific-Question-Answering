@@ -17,7 +17,8 @@ async-lru==2.0.4
 attrs==24.3.0
 audioread==3.0.1
 babel==2.16.0
-beautifulsoup4==4.12.3
+beautifulsoup4
+lxml
 bibtexparser==1.4.3
 bleach==6.2.0
 blinker==1.8.2
