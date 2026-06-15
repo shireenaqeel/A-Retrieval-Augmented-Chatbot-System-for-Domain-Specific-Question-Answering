@@ -32,8 +32,79 @@ _ensure_nltk_data()
 
 
 # ------------------ CONFIG ------------------ #
-st.set_page_config(page_title="LLM QA with Full Metrics", layout="wide")
-st.title("🧪 Web Q&A with Groq + Full Evaluation")
+st.set_page_config(page_title="Web Q&A · Groq RAG", page_icon="🧪", layout="wide")
+
+# ------------------ STYLES ------------------ #
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500&display=swap');
+
+    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, .hero-title { font-family: 'Quicksand', sans-serif !important; }
+
+    /* Hero card */
+    .hero {
+        background: linear-gradient(135deg, #6C9BD1 0%, #A78BD0 100%);
+        padding: 1.6rem 2rem;
+        border-radius: 20px;
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(108, 155, 209, 0.25);
+        margin-bottom: 1.5rem;
+    }
+    .hero-title { font-size: 2.1rem; font-weight: 700; margin: 0; }
+    .hero-sub { font-size: 1rem; opacity: 0.95; margin-top: 0.3rem; }
+
+    /* Inputs */
+    .stTextInput > div > div > input {
+        border-radius: 12px;
+        border: 1.5px solid #E3E9F0;
+    }
+    .stTextInput > div > div > input:focus {
+        border-color: #6C9BD1;
+        box-shadow: 0 0 0 2px rgba(108,155,209,0.2);
+    }
+
+    /* Button */
+    .stButton > button {
+        border-radius: 12px;
+        background: linear-gradient(135deg, #6C9BD1 0%, #A78BD0 100%);
+        color: #fff;
+        border: none;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        padding: 0.5rem 1.6rem;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(108,155,209,0.35);
+        color: #fff;
+    }
+
+    /* Expanders as soft cards */
+    [data-testid="stExpander"] {
+        border-radius: 16px;
+        border: 1px solid #EDF1F6;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    /* Subheaders accent */
+    h3 { color: #4A6FA5; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <div class="hero">
+        <p class="hero-title">🧪 Web Q&amp;A with Groq</p>
+        <p class="hero-sub">Ask anything about a web page — powered by RAG, FAISS &amp; a sprinkle of evaluation magic ✨</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # It is recommended to use st.secrets for API keys
 GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")  # Set this in Streamlit Cloud > Settings > Secrets
@@ -187,8 +258,23 @@ if st.button("Submit") and url and question:
     with st.spinner("Generating answer with Groq LLM..."):
         answer = answer_question(question, context)
 
+    st.toast("Answer ready! 🎉")
     st.subheader("💬 Generated Answer")
-    st.markdown(f"> {answer}")
+    st.markdown(
+        f"""
+        <div style="
+            background: #F4F8FB;
+            border-left: 5px solid #6C9BD1;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            font-size: 1.02rem;
+            line-height: 1.6;
+            color: #2E3440;">
+            {answer}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # --- 4. Post-LLM Evaluation ---
     st.subheader("📊 Generation & Evaluation Metrics")
