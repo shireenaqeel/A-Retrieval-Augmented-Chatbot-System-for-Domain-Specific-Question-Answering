@@ -1,62 +1,16 @@
-# Core Web App
+# Dependencies actually used by main.py
 streamlit
-fastapi
-uvicorn
-aiohttp
-httpx
-python-dotenv
-
-# NLP & Transformers
-transformers
-sentence-transformers
-torch
-detoxify
-langchain
-langchain-core
-langchain-community
-langchain-groq
-langsmith
-langchain-text-splitters
-
-# Text + Doc Processing
-PyPDF2
-pdfplumber
-PyMuPDF
-python-docx
-python-pptx
-pytesseract
-SpeechRecognition
-gTTS
-pyttsx3
-pydub
-
-# Web Scraping & Parsing
-beautifulsoup4
-lxml
 requests
-fake-useragent
-
-# Vector DB & Search
+beautifulsoup4
+sentence-transformers
 faiss-cpu
-
-# Data Science & Utils
 numpy
 pandas
 scikit-learn
 matplotlib
 seaborn
-tqdm
-
-# Plotting
-plotly
-altair
-
-# Validation / Pydantic
-pydantic
-
-# Optional / Helpful tools
-PyYAML
-
-# Fix for Detoxify not found
 detoxify
-pytorch-lightning
+nltk
+rouge-score
+textstat
+groq
