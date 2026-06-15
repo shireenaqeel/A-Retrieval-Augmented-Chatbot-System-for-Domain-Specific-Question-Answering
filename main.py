@@ -45,7 +45,7 @@ st.markdown(
 
     /* Hero card */
     .hero {
-        background: linear-gradient(135deg, #6C9BD1 0%, #A78BD0 100%);
+        background: linear-gradient(135deg, #4A7BB0 0%, #7FB0E0 100%);
         padding: 1.6rem 2rem;
         border-radius: 20px;
         color: #fff;
@@ -58,7 +58,7 @@ st.markdown(
     /* Inputs */
     .stTextInput > div > div > input {
         border-radius: 12px;
-        border: 1.5px solid #E3E9F0;
+        border: 1.5px solid #2C3444;
     }
     .stTextInput > div > div > input:focus {
         border-color: #6C9BD1;
@@ -68,7 +68,7 @@ st.markdown(
     /* Button */
     .stButton > button {
         border-radius: 12px;
-        background: linear-gradient(135deg, #6C9BD1 0%, #A78BD0 100%);
+        background: linear-gradient(135deg, #4A7BB0 0%, #7FB0E0 100%);
         color: #fff;
         border: none;
         font-family: 'Quicksand', sans-serif;
@@ -85,12 +85,12 @@ st.markdown(
     /* Expanders as soft cards */
     [data-testid="stExpander"] {
         border-radius: 16px;
-        border: 1px solid #EDF1F6;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        border: 1px solid #222B3A;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
     }
 
     /* Subheaders accent */
-    h3 { color: #4A6FA5; }
+    h3 { color: #8FB8E8; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -263,13 +263,13 @@ if st.button("Submit") and url and question:
     st.markdown(
         f"""
         <div style="
-            background: #F4F8FB;
-            border-left: 5px solid #6C9BD1;
+            background: #1A2030;
+            border-left: 5px solid #7FB0E0;
             padding: 1rem 1.25rem;
             border-radius: 12px;
             font-size: 1.02rem;
             line-height: 1.6;
-            color: #2E3440;">
+            color: #E6EAF1;">
             {answer}
         </div>
         """,
