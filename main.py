@@ -31,7 +31,7 @@ st.set_page_config(page_title="LLM QA with Full Metrics", layout="wide")
 st.title("🧪 Web Q&A with Groq + Full Evaluation")
 
 # It is recommended to use st.secrets for API keys
-GROQ_API_KEY = "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" # Replace with your actual key
+GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")  # Set this in Streamlit Cloud > Settings > Secrets
 
 # ------------------ FUNCTIONS ------------------ #
 @st.cache_data
@@ -319,7 +319,7 @@ st.set_page_config(page_title="LLM QA with Full Metrics", layout="wide")
 st.title("🧪 Web Q&A with Groq + Full Evaluation")
 
 # It is recommended to use st.secrets for API keys
-GROQ_API_KEY = "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" # Replace with your actual key
+GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")  # Set this in Streamlit Cloud > Settings > Secrets
 
 # ------------------ FUNCTIONS ------------------ #
 @st.cache_data
