@@ -38,7 +38,12 @@ GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")  # Set this in Streamlit Cloud
 def get_website_content(url):
     """Scrapes the text content from a website URL."""
     try:
-        response = requests.get(url, timeout=10)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/124.0 Safari/537.36"
+        }
+        response = requests.get(url, timeout=10, headers=headers)
         response.raise_for_status()  # Raise an exception for bad status codes
         soup = BeautifulSoup(response.text, 'html.parser')
         paragraphs = soup.find_all('p')
