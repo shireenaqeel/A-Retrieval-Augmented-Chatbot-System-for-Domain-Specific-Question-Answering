@@ -19,11 +19,16 @@ import textstat
 
 from groq import Groq
 
-# Ensure NLTK 'punkt' is downloaded
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
+# Ensure required NLTK tokenizer data is available (newer NLTK needs 'punkt_tab')
+@st.cache_resource
+def _ensure_nltk_data():
+    for pkg in ("punkt", "punkt_tab"):
+        try:
+            nltk.data.find(f"tokenizers/{pkg}")
+        except LookupError:
+            nltk.download(pkg)
+
+_ensure_nltk_data()
 
 
 # ------------------ CONFIG ------------------ #
@@ -97,7 +102,7 @@ Question:
 Answer:"""
     try:
         response = client.chat.completions.create(
-            model="llama3-8b-8192",  # Using a valid Groq model
+            model="llama-3.1-8b-instant",  # Current supported Groq model
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
@@ -174,7 +179,7 @@ if st.button("Submit") and url and question:
 
         # Plot Similarity Scores
         fig, ax = plt.subplots()
-        sns.barplot(x="Chunk", y="Cosine Similarity", data=df_chunks, ax=ax, palette="viridis")
+        sns.barplot(x="Chunk", y="Cosine Similarity", data=df_chunks, ax=ax, hue="Chunk", palette="viridis", legend=False)
         ax.set_title("Cosine Similarity of Retrieved Chunks to Query")
         st.pyplot(fig)
 
@@ -243,7 +248,7 @@ if st.button("Submit") and url and question:
                     'F1-Score': [metrics_data['ROUGE-1'], metrics_data['ROUGE-2'], metrics_data['ROUGE-L']]
                 })
                 fig_rouge, ax_rouge = plt.subplots()
-                sns.barplot(data=rouge_df, x='Metric', y='F1-Score', ax=ax_rouge, palette='plasma')
+                sns.barplot(data=rouge_df, x='Metric', y='F1-Score', ax=ax_rouge, hue='Metric', palette='plasma', legend=False)
                 ax_rouge.set_title('ROUGE F1-Scores')
                 ax_rouge.set_ylim(0, 1)
                 st.pyplot(fig_rouge)
@@ -255,7 +260,7 @@ if st.button("Submit") and url and question:
                     'Score': [metrics_data['Groundedness'], metrics_data['Semantic Sim.']]
                 })
                 fig_sim, ax_sim = plt.subplots()
-                sns.barplot(data=sim_df, x='Metric', y='Score', ax=ax_sim, palette='coolwarm')
+                sns.barplot(data=sim_df, x='Metric', y='Score', ax=ax_sim, hue='Metric', palette='coolwarm', legend=False)
                 ax_sim.set_title('Similarity Scores')
                 ax_sim.set_ylabel('Cosine Similarity')
                 ax_sim.set_ylim(0, 1)
